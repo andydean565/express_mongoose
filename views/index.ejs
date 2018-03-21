@@ -1,0 +1,22 @@
+<% layout('layout') -%>
+<div class="row justify-content-center">
+  <div class="col-sm-12">
+    <h1><%= title %></h1>
+    <hr />
+  </div>
+  <div class="col-sm-2 text-center">
+    <strong>Books : </strong><span class="badge badge-secondary"><%= data.book_count %></span>
+  </div>
+  <div class="col-sm-2 text-center">
+    <strong>Copies : </strong><span class="badge badge-secondary"><%= data.book_instance_count %></span>
+  </div>
+  <div class="col-sm-2 text-center">
+    <strong>Copies available : </strong><span class="badge badge-secondary"><%= data.book_instance_available_count %></span>
+  </div>
+  <div class="col-sm-2 text-center">
+    <strong>Authors : </strong><span class="badge badge-secondary"><%= data.author_count %></span>
+  </div>
+  <div class="col-sm-2 text-center">
+    <strong>Genres : </strong><span class="badge badge-secondary"><%= data.genre_count %></span>
+  </div>
+</div>

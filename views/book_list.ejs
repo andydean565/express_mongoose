@@ -1,0 +1,19 @@
+<% layout('layout') -%>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">isbn</th>
+      <th scope="col">title</th>
+      <th scope="col">author</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% book_list.forEach(function(book) { %>
+      <tr onclick="window.location='<%= book.url %>';">
+         <td><%= book.isbn %></td>
+         <td><%= book.title %></td>
+         <td><%= book.author.name %></td>
+       </tr>
+    <% }); %>
+  </tbody>
+</table>
