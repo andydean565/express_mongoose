@@ -1,0 +1,23 @@
+<% layout('../layout') -%>
+<div class="row">
+  <div class="col-sm-12">
+    <h1><%= author.name %></h1>
+    <p>
+      <%= author.lifespan %>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <% author_books.forEach(function(book) { %>
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= book.title %></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><strong>Isbn : </strong><%= book.isbn %></h6>
+        <p class="card-text"><%= book.summary %></p>
+        <a href="<%= book.url %>" class="card-link">details</a>
+      </div>
+    </div>
+  </div>
+  <% }); %>
+</div>

@@ -1,0 +1,29 @@
+<% layout('../layout') -%>
+<div class="row">
+  <div class="col-sm-12">
+    <h1><%= book.title %></h1>
+    <h6 class="card-subtitle mb-2 text-muted"><strong>Author : </strong><a href="<%= book.author.url %>"><%= book.author.name %></a></h6>
+    <p><strong>Isbn : </strong><%= book.isbn %></p>
+    <p>
+      <strong>Genre : </strong>
+      <% book.genre.forEach(function(genre) { %>
+        <a href="<%= genre.url %>"><%= genre.name %></a>
+      <% }); %>
+    </p>
+    <p><%= book.summary %></p>
+  </div>
+</div>
+<div class="row">
+  <% book_instances.forEach(function(copy) { %>
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= copy.imprint %></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= copy.status %></h6>
+        <p class="card-text"><%= copy.due_back %></p>
+        <a class="card-link" href="<%= copy.url %>">details</a>
+      </div>
+    </div>
+  </div>
+  <% }); %>
+</div>

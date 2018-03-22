@@ -1,0 +1,24 @@
+<% layout('../layout') -%>
+<div class="row">
+  <div class="col-sm-12">
+    <h1><%= title %></h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% genre_list.forEach(function(genre) { %>
+          <tr onclick="window.location='<%= genre.url %>';">
+             <td><%= genre.name %></td>
+           </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</div>

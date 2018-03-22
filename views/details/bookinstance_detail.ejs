@@ -1,0 +1,14 @@
+<% layout('../layout') -%>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>ID : <%= bookinstance._id %></h1>
+    <h6><strong>Title</strong><%= bookinstance.book.title %></h6>
+    <h6><strong>Imprint :</strong> <%= bookinstance.imprint %></h6>
+    <p><strong>Status :</strong> <%= bookinstance.status %></p>
+    <p>
+      <%if (bookinstance.status != "Available") { %>
+      <strong>Due back :</strong> <%= bookinstance.due_back %>
+      <% } %>
+    </p>
+  </div>
+</div>

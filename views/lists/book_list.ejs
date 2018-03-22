@@ -1,0 +1,34 @@
+<% layout('../layout') -%>
+<div class="row">
+  <div class="col-sm-12">
+    <h1><%= title %></h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">isbn</th>
+          <th scope="col">title</th>
+          <th scope="col">author</th>
+          <th scope="col">genre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% book_list.forEach(function(book) { %>
+          <tr onclick="window.location='<%= book.url %>';">
+             <td><%= book.isbn %></td>
+             <td><%= book.title %></td>
+             <td><%= book.author.name %></td>
+             <td>
+               <% book.genre.forEach(function(genre) { %>
+                 <span class="badge badge-secondary"><%= genre.name %></span>
+                 <% }); %>
+             </td>
+           </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</div>

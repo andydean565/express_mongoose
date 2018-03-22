@@ -16,3 +16,7 @@ a {
 tr{
   cursor: pointer;
 }
+
+.card{
+  margin: 1vh 0vw;
+}
