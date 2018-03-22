@@ -4,14 +4,22 @@
     <tr>
       <th scope="col">Book</th>
       <th scope="col">status</th>
-      <th scope="col">author</th>
+      <th scope="col">due back</th>
+
     </tr>
   </thead>
   <tbody>
     <% bookinstance_list.forEach(function(bookinstance) { %>
-      <tr onclick="window.location='<%= book.url %>';">
+      <tr onclick="window.location='<%= bookinstance.url %>';">
          <td><%= bookinstance.book.title %></td>
          <td><%= bookinstance.status %></td>
+         <td>
+           <%if (bookinstance.status != "Available") { %>
+             <%= bookinstance.due_back_formatted %>
+           <% }else{ %>
+             n/a
+           <% } %>
+         </td>
        </tr>
     <% }); %>
   </tbody>

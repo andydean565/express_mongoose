@@ -5,6 +5,7 @@
       <th scope="col">isbn</th>
       <th scope="col">title</th>
       <th scope="col">author</th>
+      <th scope="col">genre</th>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +14,11 @@
          <td><%= book.isbn %></td>
          <td><%= book.title %></td>
          <td><%= book.author.name %></td>
+         <td>
+           <% book.genre.forEach(function(genre) { %>
+             <span class="badge badge-secondary"><%= genre.name %></span>
+             <% }); %>
+         </td>
        </tr>
     <% }); %>
   </tbody>
